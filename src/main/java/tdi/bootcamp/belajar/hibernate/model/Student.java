@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tdi.bootcamp.belajar.hibernate.model;
 
-import java.sql.Timestamp;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,27 +11,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-/**
- *
- * @author rodiyatunmardiyah
- */
 @Entity
-@Table(name="pegawai", schema="public")
-public class Employee extends BaseClass{
+@Table(name="student", schema="public")
+public class Student extends BaseClass{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="id", updatable = false, nullable = false)
+    @Column(name="id_student", updatable = false, nullable = false)
     private int id;
     
-    @Column(name = "nama", length= 50)
+    @Column(name = "nama", length= 150)
     private String nama;
     
-    @Column(name = "alamat", length= 150)
+    @Column (name = "Alamat", length= 150)
     private String alamat;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn (name = "id_dept")
-    private Department department;
+    @JoinColumn (name = "id_Alamat")
+
+    private Alamat alam ;
 
     public int getId() {
         return id;
@@ -63,16 +54,15 @@ public class Employee extends BaseClass{
         this.alamat = alamat;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Alamat getAlam() {
+        return alam;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setAlam(Alamat alam) {
+        this.alam = alam;
     }
 
-    public void setDepartment(Object dept) {
+    public void setIdEntry(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-    

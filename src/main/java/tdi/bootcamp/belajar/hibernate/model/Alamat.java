@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tdi.bootcamp.belajar.hibernate.model;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,28 +12,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-/**
- *
- * @author rodiyatunmardiyah
- */
 @Entity
-@Table(name="pegawai", schema="public")
-public class Employee extends BaseClass{
+@Table(name="Alamat", schema="public")
+public class Alamat {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="id", updatable = false, nullable = false)
+    @Column(name="id_alamat", updatable = false, nullable = false)
     private int id;
     
     @Column(name = "nama", length= 50)
     private String nama;
     
-    @Column(name = "alamat", length= 150)
-    private String alamat;
+    @Column (name = "kecamatan", length= 50)
+    private String kecamatan; 
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn (name = "id_dept")
-    private Department department;
+    @JoinColumn(name = "id_kecamatan")
 
+    private Kecamatan kecam;
+    
     public int getId() {
         return id;
     }
@@ -55,24 +47,31 @@ public class Employee extends BaseClass{
         this.nama = nama;
     }
 
-    public String getAlamat() {
-        return alamat;
+    public String getKecamatan() {
+        return kecamatan;
     }
 
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
+    public void setKecamatan(String kecamatan) {
+        this.kecamatan = kecamatan;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Kecamatan getKecam() {
+        return kecam;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setKecam(Kecamatan kecam) {
+        this.kecam = kecam;
     }
 
-    public void setDepartment(Object dept) {
+    public void setIdEntry(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAlamat(Alamat alam) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setIdEntry(String user_alam) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-    

@@ -9,6 +9,10 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		<property name="hbm2ddl.auto">update</property>
 		<mapping class="tdi.bootcamp.belajar.hibernate.model.Employee"/> 
+                <mapping class="tdi.bootcamp.belajar.hibernate.model.Department"/>
+                <mapping class="tdi.bootcamp.belajar.hibernate.model.Kecamatan"/> 
+                <mapping class="tdi.bootcamp.belajar.hibernate.model.Alamat"/> 
+                <mapping class="tdi.bootcamp.belajar.hibernate.model.Student/>  
 	</session-factory>
 </hibernate-configuration>
 
